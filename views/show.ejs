@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>EU</title>
+</head>
+<body>
+  <div class="container">
+    <% singleData.forEach((country) => {%>
+      <div class="card" style="width: 18rem; margin: 0 auto;">
+          <img class="card-img-top" src="<%=country.flag%>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= country.name%></h5>
+            <p class="card-text"><strong>Capital: </strong> <%= country.capital%></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Population:</strong> <%= country.population%></li>
+            <li class="list-group-item"><strong>SubRegion: </strong><%=country.subregion%></li>
+            <li class="list-group-item"><strong>Currencies: </strong><%= country.currencies[0].symbol%> --<%= country.currencies[0].name%></li>
+            <li class="list-group-item"><strong>Languages: </strong><%= country.languages[0].name%></li>
+            <li class="list-group-item"><strong>Native-name:</strong><%= country.nativeName%></li>
+            <li class="list-group-item"><strong>Timezone: </strong><%= country.timezones%></li>
+          </ul>
+        </div>
+
+    <%})%>
+  </div>
+
+
+
+  
+
+</body>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</html>
